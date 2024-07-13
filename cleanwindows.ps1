@@ -15,3 +15,7 @@ Set-ItemProperty -Path HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Name 
 #stop it showing you "fun facts" on the lock screen (they are ads)
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name RotatingLockScreenOverlayEnabled -Value 0
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name SubscribedContent-338387Enabled -Value 0
+
+#disable widgets, it's shit
+New-Item 'HKLM:\SOFTWARE\Policies\Microsoft\Dsh' -Force | New-ItemProperty -Name AllowNewsAndInterests -Value 0 -Force | Out-Null
+Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Dsh -Name AllowNewsAndInterests -Value 0
