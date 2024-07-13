@@ -12,3 +12,6 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin -
 New-Item 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer' -Force | New-ItemProperty -Name DisableSearchBoxSuggestions -Value 1 -Force | Out-Null
 Set-ItemProperty -Path HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer -Name DisableSearchBoxSuggestions -Value 1
 
+#stop it showing you "fun facts" on the lock screen (they are ads)
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name RotatingLockScreenOverlayEnabled -Value 0
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager -Name SubscribedContent-338387Enabled -Value 0
