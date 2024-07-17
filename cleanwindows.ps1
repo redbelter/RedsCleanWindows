@@ -19,3 +19,4 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDe
 #disable widgets, it's shit
 New-Item 'HKLM:\SOFTWARE\Policies\Microsoft\Dsh' -Force | New-ItemProperty -Name AllowNewsAndInterests -Value 0 -Force | Out-Null
 Set-ItemProperty -Path HKLM:\SOFTWARE\Policies\Microsoft\Dsh -Name AllowNewsAndInterests -Value 0
+write-host "done"
